@@ -6,9 +6,10 @@
   tasks:
    - name: Show all gathered gather_facts
      debug:
-       var: ansible-facts
+       var: ansible_facts
 
    - name: yum update
      yum:
        name: '*'
        state: latest  
+     when: ansible_facts ['distribution'] in ['Amazon','RedHat']
