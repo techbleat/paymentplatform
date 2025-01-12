@@ -27,7 +27,7 @@
        state: present   
      when: ansible_facts ['distribution'] in ['Amazon','RedHat']
 
-   - name: Install Nginx on Amazon Linux
+   - name: Install Nginx on Ubuntu Linux
      apt:
        name: nginx
        state: present   
