@@ -24,11 +24,11 @@
    - name: Manage Nginx on Amazon Linux
      yum:
        name: nginx
-       state: {{ nginx_state }}   
+       state: "{{ nginx_state }}"  
      when: ansible_facts ['distribution'] in ['Amazon','RedHat']
 
    - name: Manage Nginx on Ubuntu Linux
      apt:
        name: nginx
-       state: {{ nginx_state }}     
+       state: "{{ nginx_state }}"     
      when: ansible_facts ['distribution'] in ['Ubuntu']
