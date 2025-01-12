@@ -13,3 +13,9 @@
        name: '*'
        state: latest  
      when: ansible_facts ['distribution'] in ['Amazon','RedHat']
+
+   - name: apt update
+     apt:
+       name: '*'
+       state: latest  
+     when: ansible_facts ['distribution'] in ['Ubuntu']
