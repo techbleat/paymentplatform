@@ -21,14 +21,14 @@
   become: yes
   gather_facts: yes
   tasks:
-   - name: Install Nginx on Amazon Linux
+   - name: Manage Nginx on Amazon Linux
      yum:
        name: nginx
-       state: present   
+       state: {{ nginx_state }}   
      when: ansible_facts ['distribution'] in ['Amazon','RedHat']
 
-   - name: Install Nginx on Ubuntu Linux
+   - name: Manage Nginx on Ubuntu Linux
      apt:
        name: nginx
-       state: present   
+       state: {{ nginx_state }}     
      when: ansible_facts ['distribution'] in ['Ubuntu']
