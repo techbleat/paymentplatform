@@ -4,10 +4,6 @@
   become: yes
   gather_facts: yes
   tasks:
-   - name: Show all gathered gather_facts
-     debug:
-       var: ansible_facts
-
    - name: yum update
      yum:
        name: '*'
