@@ -1,21 +1,4 @@
 ---
-- name: First playbook 
-  hosts: all
-  become: yes
-  gather_facts: yes
-  tasks:
-   - name: yum update
-     yum:
-       name: '*'
-       state: latest  
-     when: ansible_facts ['distribution'] in ['Amazon','RedHat']
-
-   - name: apt update
-     apt:
-       name: '*'
-       state: latest  
-     when: ansible_facts ['distribution'] in ['Ubuntu']
-
 - name: Nginx playbook 
   hosts: web
   become: yes
