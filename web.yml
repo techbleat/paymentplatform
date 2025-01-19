@@ -15,3 +15,8 @@
        name: nginx
        state: "{{ nginx_state }}"     
      when: ansible_facts ['distribution'] in ['Ubuntu']
+
+   - name: Manage Nginx Service
+     service:
+       name: nginx
+       state: started
