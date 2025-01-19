@@ -20,3 +20,4 @@
      service:
        name: nginx
        state: started
+     when: nginx_state == 'present' 
