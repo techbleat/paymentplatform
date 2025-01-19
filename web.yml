@@ -16,8 +16,18 @@
        state: "{{ nginx_state }}"     
      when: ansible_facts ['distribution'] in ['Ubuntu']
 
+   - name: Copy index file to nginx
+     template:
+       src: templates/index.j2
+       dest: /usr/share/nginx/html/index.html
+     when: nginx_state == 'present'   
+
    - name: Manage Nginx Service
      service:
        name: nginx
        state: started
      when: nginx_state == 'present' 
+  
+
+
+  
